@@ -2,15 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 //MODULOS
+import { FormsModule } from '@angular/forms';
+
+//MODULOS PROPIOS
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router'; //aixo pilla les rutes de la memoria en app.module
+import { ComponentsModule } from '../components/components.module';
 
 
 //COMPONENTES
+import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Grafica1Component } from './grafica1/grafica1.component';
-import { PagesComponent } from './pages.component';
 
 
 @NgModule({
@@ -28,8 +32,10 @@ import { PagesComponent } from './pages.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     SharedModule,
-    RouterModule
+    RouterModule,
+    ComponentsModule,
   ]
 })
 export class PagesModule { }
