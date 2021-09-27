@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
     remember: new FormControl(localStorage.getItem('email')?true:false)
   });
 
-  constructor(private router:Router,private fb:FormBuilder,private usuarioService:UsuarioService,private ngZone:NgZone) { }
+  constructor(private router:Router,private usuarioService:UsuarioService,private ngZone:NgZone) { }
 
   ngOnInit(): void {
     this.renderButton();
@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
         localStorage.removeItem('email');
       }
 
-      console.log(resp);
+     // console.log(resp);
 
       this.router.navigateByUrl('dashboard');
 

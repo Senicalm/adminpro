@@ -1,0 +1,44 @@
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Perfil de usuario</h4>
+                <h6 class="card-subtitle">Ajustes...</h6>
+                <form class="form p-t-20" (ngSubmit)="actualizarPerfil()" [formGroup]="perfilForm">
+                    <div class="form-group">
+                        <label for="exampleInputuname">Nombre</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-user"></i></div>
+                            <input formControlName="nombre" type="text" class="form-control" id="exampleInputuname" placeholder="Nombre">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email</label>
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="ti-email"></i></div>
+                            <input [readonly]="usuario.google" formControlName="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <button type="submit" [disabled]="perfilForm.invalid" class="btn btn-success waves-effect waves-light m-r-10 fa fa-save btn-block"> Guardar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Avatar</h4>
+                <h6 class="card-subtitle">Imagen del usuario</h6>
+                <div class="text-center">
+                    <img *ngIf="!imgTmp" [src]="usuarioService.usuario.getImagenUrl" alt="" class="img-avatar">
+                    <img *ngIf="imgTmp" [src]="imgTmp" alt="" class="img-avatar">
+                </div>
+                <input type="file" (change)="cambiarImagen($event)">
+                <br>
+                <br>
+                <button (click)="subirImagen()" [disabled]="!imagenSubir" type="button" class="btn btn-success waves-effect waves-light m-r-10 fa fa-save btn-block"> Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
