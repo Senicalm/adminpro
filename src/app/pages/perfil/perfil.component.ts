@@ -6,6 +6,7 @@ import { FileUploadService } from '../../services/file-upload.service';
 import { Usuario } from '../../models/usuario.model';
 import Swal from 'sweetalert2';
 
+
 @Component({
   selector: 'app-perfil',
   templateUrl: './perfil.component.html',
@@ -34,7 +35,12 @@ export class PerfilComponent implements OnInit {
 
   actualizarPerfil(){
 
-    this.usuarioService.actualizarUsuario(this.perfilForm.value).subscribe(resp=>{
+    const {nombre, email} = this.perfilForm.value;
+    const user = new Usuario(nombre,email,'','',this.usuario.google,this.usuario.role,this.usuario.uid);
+    
+    
+
+    this.usuarioService.actualizarUsuario(user).subscribe(resp=>{
 
      // console.log(resp);
      Swal.fire('Guardado','Cambios guardados','success');

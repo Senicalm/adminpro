@@ -16,6 +16,12 @@ export class Usuario{
 
         get getImagenUrl(){
 
+            if(!this.img){
+
+                return `${base_url}/uploads/usuarios/no-image`;
+                
+            }
+
             if(this.img?.includes('https')){
                
                 return this.img;
