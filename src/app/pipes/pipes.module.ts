@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { UsuarioImgPipe } from '../pipes/usuario-img.pipe';
+import { TipoImgPipe } from './tipo-img.pipe';
 
 @NgModule({
     declarations: [
-      UsuarioImgPipe
+      TipoImgPipe
     ],
     exports:[
-      UsuarioImgPipe
+      TipoImgPipe
     ],
     imports: [
       CommonModule,

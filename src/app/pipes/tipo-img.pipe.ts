@@ -4,9 +4,9 @@ import { environment } from '../../environments/environment';
 const base_url = environment.base_url;
 
 @Pipe({
-  name: 'usuarioImg'
+  name: 'tipoImg'
 })
-export class UsuarioImgPipe implements PipeTransform {
+export class TipoImgPipe implements PipeTransform {
 
   transform(imagen: string | undefined,tipo: 'usuarios' | 'hospitales' | 'medicos'): string {
     if(!imagen){

@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router'; //aixo pilla les rutes de la memoria en app.module
 
 //MODULOS
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //MODULOS PROPIOS
 import { SharedModule } from '../shared/shared.module';
-import { RouterModule } from '@angular/router'; //aixo pilla les rutes de la memoria en app.module
 import { ComponentsModule } from '../components/components.module';
+////pipes modulo
 import { PipesModule } from '../pipes/pipes.module';
 
 
@@ -21,6 +22,8 @@ import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
+import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 
 
 @NgModule({
@@ -33,7 +36,9 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
     PromesasComponent,
     RxjsComponent,
     PerfilComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    HospitalesComponent,
+    MedicosComponent
   ],
   exports:[
     DashboardComponent,

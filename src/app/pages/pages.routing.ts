@@ -13,6 +13,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
 import { PerfilComponent } from './perfil/perfil.component';
 //MANTENIMIENTOS
 import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
+import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
+import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 
 
 const routes: Routes = [
@@ -26,6 +28,8 @@ const routes: Routes = [
             {path:'perfil',component: PerfilComponent, data:{titulo:'Perfil'}},
             //MANTENIMIENTOS
             {path:'usuarios',component: UsuariosComponent, data:{titulo:'Usuarios'}},
+            {path:'hospitales',component: HospitalesComponent, data:{titulo:'Hospitales'}},
+            {path:'medicos',component: MedicosComponent, data:{titulo:'Medicos'}},
            
           ]},
 ];

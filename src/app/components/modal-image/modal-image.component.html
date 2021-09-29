@@ -9,7 +9,7 @@
                 <div class="modal-body">
                     <h3>Selecciona una imagen</h3>
                     <div class="text-center">
-                        <img *ngIf="!imgTmp" [src]="imagenModalService.img | usuarioImg:'usuarios'" alt="" class="img-avatar">
+                        <img *ngIf="!imgTmp" [src]="imagenModalService.img | tipoImg:'usuarios'" alt="" class="img-avatar">
                         <img *ngIf="imgTmp" [src]="imgTmp" alt="" class="img-avatar">
                     </div>
                     <input type="file" (change)="cambiarImagen($event)">
