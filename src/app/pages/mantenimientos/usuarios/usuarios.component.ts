@@ -8,6 +8,7 @@ import { UsuarioService } from '../../../services/usuario.service';
 import { BusquedasService } from '../../../services/busquedas.service';
 import { ImagenModalService } from 'src/app/services/imagen-modal.service';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-usuarios',
@@ -30,8 +31,20 @@ export class UsuariosComponent implements OnInit,OnDestroy {
   public termino:string = '';
 
   imgSubscripcion:Subscription;
+
+  public terminoEntrada = '';
   
-  constructor(private usuarioService:UsuarioService,private busquedaService:BusquedasService,private modalImageService:ImagenModalService) {  
+  constructor(private activatedRoute:ActivatedRoute,private usuarioService:UsuarioService,private busquedaService:BusquedasService,private modalImageService:ImagenModalService) {  
+
+    this.activatedRoute.params.subscribe(resp =>{
+
+      if(resp.termino){
+
+        this.termino = resp.termino;
+
+      }
+
+    });
 
   }
  

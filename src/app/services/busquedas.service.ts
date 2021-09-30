@@ -31,4 +31,10 @@ export class BusquedasService {
     return this.http.get(`${base_url}/todo/${tipo}/${termino}?page=${pagina}&limit=${limit}`,this.headers);
 
   }
+
+  buscarGlobal(termino:string){
+
+    return this.http.get(`${base_url}/todo/${termino}`,this.headers);
+    
+  }
 }

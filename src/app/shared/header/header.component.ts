@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private usuarioService:UsuarioService,private router:Router) { 
 
+   
     this.usuario = this.usuarioService.usuario;
    // console.log(this.imgUrl);
 
@@ -25,5 +26,19 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.usuarioService.logout();
+  }
+
+  buscar(termino:string){
+
+    if(termino.length === 0){
+      
+      this.router.navigateByUrl('/dashboard');
+
+    }else{
+
+      this.router.navigateByUrl(`/dashboard/buscar/${termino}`);
+      
+    }
+    
   }
 }

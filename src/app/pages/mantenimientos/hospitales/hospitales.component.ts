@@ -7,6 +7,7 @@ import { Hospital } from '../../../models/hospital.model';
 import { BusquedasService } from '../../../services/busquedas.service';
 import { HospitalService } from '../../../services/hospital.service';
 import { ImagenModalService } from '../../../services/imagen-modal.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-hospitales',
@@ -30,7 +31,18 @@ export class HospitalesComponent implements OnInit {
 
   hospitales:Hospital[] = [];
 
-  constructor(private hospitalService:HospitalService,private busquedaService:BusquedasService,private modalImageService:ImagenModalService) { }
+  constructor(private activatedRoute:ActivatedRoute,private hospitalService:HospitalService,private busquedaService:BusquedasService,private modalImageService:ImagenModalService) { 
+
+    this.activatedRoute.params.subscribe(resp =>{
+
+      if(resp.termino){
+
+        this.termino = resp.termino;
+
+      }
+
+    });
+  }
 
   ngOnInit(): void {
 

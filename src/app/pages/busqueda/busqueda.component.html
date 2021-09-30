@@ -1,0 +1,100 @@
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Usuarios</h4>
+
+                <div class="alert alert-info animate__animated animate__fadeIn animate__fast" role="alert" *ngIf="usuarios.length === 0">
+                    <p class="mb-0">
+                        No hay usuarios
+                    </p>
+                </div>
+
+                <div class="table-responsive animate__animated animate__fadeIn animate__fast" *ngIf="usuarios.length > 0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Avatar</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let usuario of usuarios" (click)="abrirUsuario(usuario)" class="cursor">
+                                <td>
+                                    <img class="w50" [src]="usuario.img | tipoImg:'usuarios'" alt="">
+                                </td>
+                                <td>{{usuario.nombre}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hospitales</h4>
+
+                <div class="alert alert-info animate__animated animate__fadeIn animate__fast" role="alert" *ngIf="hospitales.length === 0">
+                    <p class="mb-0">
+                        No hay hospitales
+                    </p>
+                </div>
+
+                <div class="table-responsive animate__animated animate__fadeIn animate__fast" *ngIf="hospitales.length > 0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Avatar</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let hospital of hospitales" (click)="abrirHospital(hospital)" class="cursor">
+                                <td>
+                                    <img class="w50" [src]="hospital.img | tipoImg:'hospitales'" alt="">
+                                </td>
+                                <td>{{hospital.nombre}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Medicos</h4>
+
+                <div class="alert alert-info animate__animated animate__fadeIn animate__fast" role="alert" *ngIf="medicos.length === 0">
+                    <p class="mb-0">
+                        No hay medicos
+                    </p>
+                </div>
+
+                <div class="table-responsive animate__animated animate__fadeIn animate__fast" *ngIf="medicos.length > 0">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Avatar</th>
+                                <th>Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let medico of medicos" (click)="abrirMedico(medico)" class="cursor">
+                                <td>
+                                    <img class="w50" [src]="medico.img | tipoImg:'medicos'" alt="">
+                                </td>
+                                <td>{{medico.nombre}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

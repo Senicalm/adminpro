@@ -16,6 +16,8 @@ import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component'
 import { HospitalesComponent } from './mantenimientos/hospitales/hospitales.component';
 import { MedicosComponent } from './mantenimientos/medicos/medicos.component';
 import { MedicoComponent } from './mantenimientos/medicos/medico.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
+import { AdminGuard } from '../guards/admin.guard';
 
 
 const routes: Routes = [
@@ -24,14 +26,19 @@ const routes: Routes = [
             {path:'progress',component:ProgressComponent, data:{titulo:'Progress'}},
             {path:'grafica1',component: Grafica1Component, data:{titulo:'Grafica #1'}},
             {path:'account-settings',component: AccountSettingsComponent, data:{titulo:'Settings'}},
+            {path:'buscar/:termino',component: BusquedaComponent, data:{titulo:'Buscar'}},
             {path:'promesas',component: PromesasComponent, data:{titulo:'Promesas'}},
             {path:'rxjs',component: RxjsComponent, data:{titulo:'Rxjs'}},
             {path:'perfil',component: PerfilComponent, data:{titulo:'Perfil'}},
+            
             //MANTENIMIENTOS
-            {path:'usuarios',component: UsuariosComponent, data:{titulo:'Usuarios'}},
+            {path:'hospitales/:termino',component: HospitalesComponent, data:{titulo:'Hospitales'}},
             {path:'hospitales',component: HospitalesComponent, data:{titulo:'Hospitales'}},
             {path:'medicos',component: MedicosComponent, data:{titulo:'Medicos'}},
             {path:'medico/:id',component: MedicoComponent, data:{titulo:'Medico'}},
+            ////admin
+            {path:'usuarios/:termino',component: UsuariosComponent, canActivate:[AdminGuard], data:{titulo:'Usuarios'}},
+            {path:'usuarios',component: UsuariosComponent, canActivate:[AdminGuard], data:{titulo:'Usuarios'}},
            
           ]},
 ];
