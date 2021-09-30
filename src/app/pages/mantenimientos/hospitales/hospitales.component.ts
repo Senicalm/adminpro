@@ -101,7 +101,7 @@ ngOnDestroy(): void {
 
         this.busquedaService.buscar('hospitales',this.termino,paginaCargar).subscribe((resp:any) =>{
 
-          console.log(resp);
+         //console.log(resp);
             this.paginaAnterior = resp.backPage;
             this.paginaActual = resp.actualPage;
             this.paginaSiguiente = resp.nextPage;
